@@ -126,6 +126,22 @@ nod* minim (nod *r)
 		r = r->left;
 	return r;
 }
+
+int cauta(nod *rad, int x)
+{
+    if (rad == NULL)
+        return 0;
+
+    if (rad->info == x)
+        return 1;
+
+    if (rad->info > x)
+        return cauta(rad->left, x);
+
+    return cauta(rad->right, x);
+
+}
+
 bool stergere (nod *&p, int val)
 {
 	if (p == NULL)
@@ -179,7 +195,7 @@ bool stergere (nod *&p, int val)
 			}
 		}
 
-	if (abs(p->bal) != 0)
+	if (p->bal != 0)
 		echilibrare(p);
 
 	if (p->bal == 0)
