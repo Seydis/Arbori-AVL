@@ -172,8 +172,10 @@ bool stergere (nod *&p, int val)
 					p->info = p->left->info;
 					p->left = NULL;
 					p->bal++;
+					delete (p->left);
 					return true;
 					// poate delete(t->left) aici
+
 				}
 				else
 					if (p->right != NULL)
@@ -181,6 +183,7 @@ bool stergere (nod *&p, int val)
 						p->info = p->right->info;
 						p->right = NULL;
 						p->bal--;
+						delete (p->right);
 						return true;
 					}
 			}
