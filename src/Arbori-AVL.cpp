@@ -73,7 +73,7 @@ bool inserare (nod *&p, int val)
 {
 	if (p == NULL)
 	{
-		p = new nod; // de facut cu smart pointers
+		p = new nod;
 		p->info = val;
 		p->bal = 0;
 		p->left = NULL;
@@ -234,6 +234,5 @@ int main() {
 
 	rsd (r);
 
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
 	return 0;
 }
